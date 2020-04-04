@@ -1,0 +1,35 @@
+{
+  "name": "libindic-transliteration",
+  "version": "1.0.0",
+  "description": "Transliteration module for Indian Languages",
+  "main": "Transliterator.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^7.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "malayalam",
+    "hindi",
+    "kannada",
+    "india",
+    "libindic",
+    "manglish",
+    "hinglish",
+    "kanglish"
+  ],
+  "author": "Subin Siby",
+  "license": "GPL-3.0",
+  "homepage": "https://subinsb.com/indicen/",
+  "repository": {
+    "type" : "git",
+    "url" : "https://gitlab.com/subins2000/indicjs.git"
+  }
+}
