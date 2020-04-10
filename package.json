@@ -1,6 +1,6 @@
 {
   "name": "libindic-transliteration",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Transliteration module for Indian Languages",
   "main": "Transliterator.js",
   "directories": {
@@ -23,13 +23,14 @@
     "libindic",
     "manglish",
     "hinglish",
-    "kanglish"
+    "kanglish",
+    "transliteration"
   ],
   "author": "Subin Siby",
   "license": "GPL-3.0",
   "homepage": "https://subinsb.com/indicen/",
   "repository": {
     "type" : "git",
-    "url" : "https://gitlab.com/subins2000/indicjs.git"
+    "url" : "https://gitlab.com/indicproject/indicjs.git"
   }
 }
