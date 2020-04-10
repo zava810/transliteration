@@ -49,9 +49,12 @@ var hi2en = function(input) {
     "ु": "u", "ू": "oo", "ृ": "rri", "े": "e", "ॆ": "e",
     "ै": "ai", "ो": "o", "ॊ": "o", "ौ": "au",
     "क्ष": "ksh", "त्र": "tr", "ज्ञ": "jn",
-    "೧": "१", "२": "2", "३": "3", "೪": "4", "५": "5",
-    "६": "6", "७": "7", "८": "8", "९": "9", "०": "0",
     "ऑ": "O", "ॉ": "O", "।": "."
+  };
+
+  var numerals = {
+    "१": "1", "२": "2", "३": "3", "೪": "4", "५": "5",
+    "६": "6", "७": "7", "८": "8", "९": "9", "०": "0"
   };
 
   var vowels = [
@@ -94,6 +97,9 @@ var hi2en = function(input) {
     // Get english equivalaent of the charachter.
     if (isInIt(dictionary, current_character)) {
       output += dictionary[current_character];
+    } else if (isInIt(numerals, current_character)) {
+      // Transliterate numerals
+      output += numerals[current_character];
     } else {
       output += current_character;
     }

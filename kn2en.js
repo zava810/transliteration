@@ -48,7 +48,10 @@ var kn2en = function(input) {
     "ಋ": "rri", "್": "", "ಾ": "aa", "ಿ": "i", "ೀ": "i",
     "ು": "u", "ೂ": "u", "ೃ": "rri", "ೆ": "e", "ೇ": "e",
     "ೈ": "ai", "ೊ": "o", "ೋ": "o", "ೌ": "au",
-    "ಕ್ಷ": "ksh", "ತ್ರ": "tr", "ಜ್ಞ": "jn",
+    "ಕ್ಷ": "ksh", "ತ್ರ": "tr", "ಜ್ಞ": "jn"
+  };
+
+  var numerals = {
     "೧": "1", "೨": "2", "೩": "3", "೪": "4", "೫": "5",
     "೬": "6", "೭": "7", "೮": "8", "೯": "9", "೦": "0"
   };
@@ -93,7 +96,10 @@ var kn2en = function(input) {
 
     // Get english equivalaent of the charachter.
     if (isInIt(dictionary, current_character)) {
-      output += dictionary[current_character]
+      output += dictionary[current_character];
+    } else if (isInIt(numerals, current_character)) {
+      // Transliterate numerals
+      output += numerals[current_character];
     } else {
       output += current_character;
     }
