@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   entry: './Transliterator.js',
@@ -6,6 +6,6 @@ module.exports = {
     library: 'Transliterator',
     libraryTarget: 'window',
     filename: 'transliterator.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-}; 
+    path: path.resolve(__dirname, 'dist')
+  }
+}

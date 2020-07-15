@@ -5,114 +5,113 @@
  * This algorithm transliterates Hindi script to Roman characters ('Hinglish')
  *
  * This work is licensed under GNU General Public License version 3.
- * 
+ *
  * Copyright Subin Siby <mail@subinsb.com>, 2020
- * 
+ *
  * ---------------
  *
  * Port of libindic's Transliteration module
  * https://libindic.org/Transliteration
- * 
+ *
  * Copyright 2009-2010 Santhosh Thottingal <santhosh.thottingal@gmail.com>
  * Copyright 2010 Vasudev Kamath <kamathvasudev@gmail.com>
  *
- * Licensed under GNU Lesser General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+ * Licensed under GNU Lesser General Public License as published by the Free Software Foundation either version 3 of the License, or (at your option) any later version.
 */
 
-var hi2en = function(input) {
-  
+var hi2en = function (input) {
   /**
    * Checks if a key is available in an object
    * Checks if a value is in an array
    * @param object|array list
    * @return bool
    */
-  function isInIt(list, val) {
-    if (!Array.isArray(list))
-      list = Object.keys(list);
+  function isInIt (list, val) {
+    if (!Array.isArray(list)) { list = Object.keys(list) }
 
-    return list.indexOf(val) !== -1;
+    return list.indexOf(val) !== -1
   }
 
-  var dictionary = {
-    "अ": "a", "आ": "aa", "इ": "i", "ई": "ee", "उ": "u",
-    "ऊ": "u", "ऋ": "rri", "ए": "e", "ऐ": "ai",
-    "ओ": "o", "औ": "au", "ं": "m", "ಃ": "h",
-    "क": "k", "ख": "kh", "ग": "g", "घ": "gh", "ङ": "ng",
-    "च": "ch", "छ": "chh", "ज": "j", "झ": "jhh", "ञ": "nj",
-    "ट": "T", "ठ": "thh", "ड": "d", "ढ": "dh", "ण": "N",
-    "त": "th", "थ": "Th", "द": "D", "ध": "Dh", "न": "n",
-    "प": "p", "फ": "ph", "ब": "b", "भ": "bh", "म": "m",
-    "य": "y", "र": "r", "ल": "l", "व": "v", "ष": "sh",
-    "श": "shh", "स": "s", "ह": "h", "ಳ": "L",
-    "ृ": "rri", "ा": "aa", "ि": "i", "ी": "i",
-    "ु": "u", "ू": "oo", "ृ": "rri", "े": "e", "ॆ": "e",
-    "ै": "ai", "ो": "o", "ॊ": "o", "ौ": "au",
-    "क्ष": "ksh", "त्र": "tr", "ज्ञ": "jn",
-    "ऑ": "O", "ॉ": "O", "।": "."
-  };
+  /* eslint-disable object-property-newline */
+  const dictionary = {
+    अ: 'a', आ: 'aa', इ: 'i', ई: 'ee', उ: 'u',
+    ऊ: 'u', ऋ: 'rri', ए: 'e', ऐ: 'ai',
+    ओ: 'o', औ: 'au', 'ं': 'm', 'ಃ': 'h',
+    क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ng',
+    च: 'ch', छ: 'chh', ज: 'j', झ: 'jhh', ञ: 'nj',
+    ट: 'T', ठ: 'thh', ड: 'd', ढ: 'dh', ण: 'N',
+    त: 'th', थ: 'Th', द: 'D', ध: 'Dh', न: 'n',
+    प: 'p', फ: 'ph', ब: 'b', भ: 'bh', म: 'm',
+    य: 'y', र: 'r', ल: 'l', व: 'v', ष: 'sh',
+    श: 'shh', स: 's', ह: 'h', ಳ: 'L',
+    'ृ': 'rri', 'ा': 'aa', 'ि': 'i', 'ी': 'i',
+    'ु': 'u', 'ू': 'oo', 'े': 'e', 'ॆ': 'e',
+    'ै': 'ai', 'ो': 'o', 'ॊ': 'o', 'ौ': 'au',
+    क्ष: 'ksh', त्र: 'tr', ज्ञ: 'jn',
+    ऑ: 'O', 'ॉ': 'O', '।': '.'
+  }
 
-  var numerals = {
-    "१": "1", "२": "2", "३": "3", "೪": "4", "५": "5",
-    "६": "6", "७": "7", "८": "8", "९": "9", "०": "0"
-  };
+  const numerals = {
+    '१': '1', '२': '2', '३': '3', '೪': '4', '५': '5',
+    '६': '6', '७': '7', '८': '8', '९': '9', '०': '0'
+  }
 
-  var vowels = [
-    "अ", "आ", "इ", "ई", "उ", "ऊ", "ऋ", "ए",
-    "ऐ", "ओ", "औ"
-  ];
+  const vowels = [
+    'अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ऋ', 'ए',
+    'ऐ', 'ओ', 'औ'
+  ]
 
-  var vowel_signs = [
-    "ा", "ि", "ी", "ु", "ू", "ृ", "े", "ॆ",
-    "ै", "ो", "ॊ", "ौ", "ं", "ಃ"
-  ];
+  const vowelSigns = [
+    'ा', 'ि', 'ी', 'ु', 'ू', 'ृ', 'े', 'ॆ',
+    'ै', 'ो', 'ॊ', 'ौ', 'ं', 'ಃ'
+  ]
 
-  var virama = "्";
-  var anuswara = "ं";
+  var virama = '्'
+  var anuswara = 'ं'
 
-  input_length = input.length;
-  index = 0;
-  output = "";
+  const inputLength = input.length
+  let index = 0
+  let output = ''
 
-  while (index < input_length) {
-    var current_character = input[index],
-        next_character = input[index + 1];
+  while (index < inputLength) {
+    const currentCharacter = input[index]
+    const nextCharacter = input[index + 1]
 
     /**
      * If current charachter is a punctuation symbol skip it.
-     * Added to avoid getting extra "a" to the begining
+     * Added to avoid getting extra 'a' to the begining
      * of word next to punctuation symbol
      */
-    if (current_character.match(/^[.,:!?]/)) {
-      output += current_character
-      index++;
-      continue;
+    if (currentCharacter.match(/^[.,:!?]/)) {
+      output += currentCharacter
+      index++
+      continue
     }
 
-    if (current_character === virama) {
-      index++;
-      continue;
+    if (currentCharacter === virama) {
+      index++
+      continue
     }
 
     // Get english equivalaent of the charachter.
-    if (isInIt(dictionary, current_character)) {
-      output += dictionary[current_character];
-    } else if (isInIt(numerals, current_character)) {
+    if (isInIt(dictionary, currentCharacter)) {
+      output += dictionary[currentCharacter]
+    } else if (isInIt(numerals, currentCharacter)) {
       // Transliterate numerals
-      output += numerals[current_character];
+      output += numerals[currentCharacter]
     } else {
-      output += current_character;
+      output += currentCharacter
     }
 
     if (
-      index + 1 < input_length &&
-      !isInIt(vowel_signs, next_character) &&
-      isInIt(dictionary, current_character) &&
-      isInIt(dictionary, next_character) &&
-      !isInIt(vowels, current_character) &&
-      !isInIt(vowel_signs, current_character)
+      index + 1 < inputLength &&
+      !isInIt(vowelSigns, nextCharacter) &&
+      isInIt(dictionary, currentCharacter) &&
+      isInIt(dictionary, nextCharacter) &&
+      !isInIt(vowels, currentCharacter) &&
+      !isInIt(vowelSigns, currentCharacter)
     ) {
-      output += "a";
+      output += 'a'
     }
 
     /**
@@ -122,35 +121,34 @@ var hi2en = function(input) {
      * क्रि का में => kri ka mem
      */
     if (
-      isInIt(dictionary, current_character) &&
+      isInIt(dictionary, currentCharacter) &&
       (
-        index + 1 == input_length ||
-        next_character === " "
+        index + 1 === inputLength ||
+        nextCharacter === ' '
       ) &&
       (
         index - 1 < 0 ||
-        input[index - 1] === " "
+        input[index - 1] === ' '
       ) &&
-      current_character != "अ" &&
-      current_character != "आ"
+      currentCharacter !== 'अ' &&
+      currentCharacter !== 'आ'
     ) {
-      output += "a";
+      output += 'a'
     }
 
     // Handle am sign
     if (
-      index + 1 < input_length &&
-      next_character == anuswara &&
-      !isInIt(vowel_signs, current_character)
+      index + 1 < inputLength &&
+      nextCharacter === anuswara &&
+      !isInIt(vowelSigns, currentCharacter)
     ) {
-      output += "a";
+      output += 'a'
     }
 
-    index++;
+    index++
   }
 
-  return output;
-
+  return output
 }
 
-module.exports = hi2en;
+module.exports = hi2en

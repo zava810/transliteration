@@ -1,6 +1,6 @@
 {
   "name": "libindic-transliteration",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Transliteration module for Indian Languages",
   "main": "Transliterator.js",
   "directories": {
@@ -8,12 +8,17 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^7.1.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^7.1.0"
   },
   "scripts": {
-    "test": "mocha"
+    "lint": "eslint .",
+    "test": "npm run lint && mocha"
   },
   "keywords": [
     "malayalam",
@@ -30,7 +35,7 @@
   "license": "GPL-3.0",
   "homepage": "https://subinsb.com/indicen/",
   "repository": {
-    "type" : "git",
-    "url" : "https://gitlab.com/indicproject/indicjs.git"
+    "type": "git",
+    "url": "https://gitlab.com/indicproject/indicjs.git"
   }
 }
