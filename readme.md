@@ -1,11 +1,9 @@
-# Transliteration
+# transliteration
 
-A module to transliterate Indian languages.
+a module to transliterate indian languages.
 
-A near port of the [Python libindic transliterator](https://github.com/libindic/Transliteration/).
+started point: near port of the [python libindic transliterator](https://github.com/libindic/transliteration/) by [subinsb](http://subinsb.com).
 
-* Malayalam : Uses [ml2en library](https://github.com/knadh/ml2en/)
-* Hindi : Uses libindic algorithm
-* Kannada : Uses libindic algorithm
+in this trying to test & caliberate phur hindi & similar bhasae.
 
-This module is used in the WebExtension [Indic-En](//subinsb.com/indicen/).
+this module is used in the webextension [indic-en](//subinsb.com/indicen/).

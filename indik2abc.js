@@ -1,22 +1,22 @@
 /*
- * (Phonemic) Romanization of Hindi script
+ * (phonemic) romanization of hindi script
  * https://subinsb.com/hi2en
  *
- * This algorithm transliterates Hindi script to Roman characters ('Hinglish')
+ * this algorithm transliterates hindi script to roman characters ('hinglish')
  *
- * This work is licensed under GNU General Public License version 3.
+ * this work is licensed under gnu general public license version 3.
  *
- * Copyright Subin Siby <mail@subinsb.com>, 2020
+ * copyright subin siby <mail@subinsb.com>, 2020
  *
  * ---------------
  *
- * Port of libindic's Transliteration module
- * https://libindic.org/Transliteration
+ * port of libindic's transliteration module
+ * https://libindic.org/transliteration
  *
- * Copyright 2009-2010 Santhosh Thottingal <santhosh.thottingal@gmail.com>
- * Copyright 2010 Vasudev Kamath <kamathvasudev@gmail.com>
+ * copyright 2009-2010 santhosh thottingal <santhosh.thottingal@gmail.com>
+ * copyright 2010 vasudev kamath <kamathvasudev@gmail.com>
  *
- * Licensed under GNU Lesser General Public License as published by the Free Software Foundation either version 3 of the License, or (at your option) any later version.
+ * licensed under gnu lesser general public license as published by the free software foundation either version 3 of the license, or (at your option) any later version.
 */
 
 var indik2abc = function (input) {

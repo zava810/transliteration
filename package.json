@@ -1,8 +1,8 @@
 {
-  "name": "libindic-transliteration",
+  "name": "libindik-transliteration",
   "version": "1.2.0",
-  "description": "Transliteration module for Indian Languages",
-  "main": "Transliterator.js",
+  "description": "transliteration module for indian languages",
+  "main": "transliterator.js",
   "directories": {
     "test": "tests"
   },
@@ -31,11 +31,11 @@
     "kanglish",
     "transliteration"
   ],
-  "author": "Subin Siby",
+  "author": "subin siby / viml kumar",
   "license": "GPL-3.0",
-  "homepage": "https://subinsb.com/indicen/",
+  "homepage": "https://gitlab.com/hscii810",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/indicproject/indicjs.git"
+    "url": "https://gitlab.com/hscii810/transliteration.git"
   }
 }
