@@ -35,11 +35,11 @@ var indik2abc = function (input) {
   /* eslint-disable object-property-newline */
   const dictionary = {
     अ: 'A', आ: 'a', इ: 'i', ई: 'ii', उ: 'u',
-    ऊ: 'uu', ऋ: 'ri', ए: 'e', ऐ: 'ei',
+    ऊ: 'uu', ऋ: 'ri', ए: 'e', ऐ: 'e',
     ओ: 'o', औ: 'ou', 'ं': 'n', 'ಃ': 'A',
     क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'rr',
     च: 'c', छ: 'ch', ज: 'z', झ: 'zh', ञ: 'n',
-    ट: 't', ठ: 'th', ड: 'd', ढ: 'dh', ण: 'N',
+    ट: 't', ठ: 'th', ड: 'd', ढ: 'dh', ण: 'nr',
     त: 'T', थ: 'Th', द: 'D', ध: 'Dh', न: 'n',
     प: 'p', फ: 'ph', ब: 'b', भ: 'bh', म: 'm',
     य: 'y', र: 'r', ल: 'l', व: 'v', ष: 'sh',
@@ -48,7 +48,7 @@ var indik2abc = function (input) {
     'ु': 'u', 'ू': 'uu', 'े': 'e', 'ॆ': 'e',
     'ै': 'Ai', 'ो': 'o', 'ॊ': 'o', 'ौ': 'ou',
     क्ष: 'ksh', त्र: 'Tr', ज्ञ: 'gy',
-    ऑ: 'O', 'ॉ': 'O', '।': '.'
+    ऑ: 'aa', 'ॉ': 'aa', '।': '.'
   }
 
   const numerals = {
@@ -82,36 +82,20 @@ var indik2abc = function (input) {
      * Added to avoid getting extra 'a' to the begining
      * of word next to punctuation symbol
      */
-    if (currentCharacter.match(/^[.,:!?]/)) {
-      output += currentCharacter
-      index++
-      continue
-    }
-
-    if (currentCharacter === virama) {
-      index++
-      continue
-    }
+    if (currentCharacter.match(/^[.,:!?]/)) { output += currentCharacter index++ continue }
+    if (currentCharacter === virama) { index++ continue }
 
     // Get english equivalaent of the charachter.
-    if (isInIt(dictionary, currentCharacter)) {
-      output += dictionary[currentCharacter]
-    } else if (isInIt(numerals, currentCharacter)) {
-      // Transliterate numerals
-      output += numerals[currentCharacter]
-    } else {
-      output += currentCharacter
-    }
+    if (isInIt(dictionary, currentCharacter)) { output += dictionary[currentCharacter] }
+    else if (isInIt(numerals, currentCharacter)) { output += numerals[currentCharacter] }
+    else { output += currentCharacter }
 
     if (
       index + 1 < inputLength &&
-      !isInIt(vowelSigns, nextCharacter) &&
-      isInIt(dictionary, currentCharacter) &&
-      isInIt(dictionary, nextCharacter) &&
-      !isInIt(vowels, currentCharacter) &&
-      !isInIt(vowelSigns, currentCharacter)
+      isInIt(dictionary, currentCharacter) && isInIt(dictionary, nextCharacter) &&
+      !isInIt(vowelSigns, nextCharacter) && !isInIt(vowels, currentCharacter) && !isInIt(vowelSigns, currentCharacter)
     ) {
-      output += 'a'
+      output += 'A'
     }
 
     /**
@@ -122,18 +106,11 @@ var indik2abc = function (input) {
      */
     if (
       isInIt(dictionary, currentCharacter) &&
-      (
-        index + 1 === inputLength ||
-        nextCharacter === ' '
-      ) &&
-      (
-        index - 1 < 0 ||
-        input[index - 1] === ' '
-      ) &&
-      currentCharacter !== 'अ' &&
-      currentCharacter !== 'आ'
+      ( index + 1 === inputLength || nextCharacter === ' ' ) &&
+      ( index - 1 < 0 || input[index - 1] === ' ' ) &&
+      currentCharacter !== 'अ' && currentCharacter !== 'आ'
     ) {
-      output += 'a'
+      output += 'A'
     }
 
     // Handle am sign
@@ -142,7 +119,7 @@ var indik2abc = function (input) {
       nextCharacter === anuswara &&
       !isInIt(vowelSigns, currentCharacter)
     ) {
-      output += 'a'
+      output += 'A'
     }
 
     index++

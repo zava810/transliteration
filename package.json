@@ -20,17 +20,7 @@
     "lint": "eslint .",
     "test": "npm run lint && mocha"
   },
-  "keywords": [
-    "malayalam",
-    "hindi",
-    "kannada",
-    "india",
-    "libindic",
-    "manglish",
-    "hinglish",
-    "kanglish",
-    "transliteration"
-  ],
+  "keywords": [ "malayalam", "hindi", "kannada", "india", "libindic", "manglish", "hinglish", "kanglish", "transliteration" ],
   "author": "subin siby / viml kumar",
   "license": "GPL-3.0",
   "homepage": "https://gitlab.com/hscii810",
