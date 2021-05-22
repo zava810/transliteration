@@ -82,20 +82,20 @@ var indik2abc = function (input) {
      * Added to avoid getting extra 'a' to the begining
      * of word next to punctuation symbol
      */
-    if (currentCharacter.match(/^[.,:!?]/)) { output += currentCharacter index++ continue }
-    if (currentCharacter === virama) { index++ continue }
+    if (currentCharacter.match(/^[.,:!?]/)) { output += currentCharacter; index++; continue; }
+    if (currentCharacter === virama) { index++; continue; }
 
     // Get english equivalaent of the charachter.
-    if (isInIt(dictionary, currentCharacter)) { output += dictionary[currentCharacter] }
-    else if (isInIt(numerals, currentCharacter)) { output += numerals[currentCharacter] }
-    else { output += currentCharacter }
+    if (isInIt(dictionary, currentCharacter)) { output += dictionary[currentCharacter]; }
+    else if (isInIt(numerals, currentCharacter)) { output += numerals[currentCharacter]; }
+    else { output += currentCharacter; }
 
     if (
       index + 1 < inputLength &&
       isInIt(dictionary, currentCharacter) && isInIt(dictionary, nextCharacter) &&
       !isInIt(vowelSigns, nextCharacter) && !isInIt(vowels, currentCharacter) && !isInIt(vowelSigns, currentCharacter)
     ) {
-      output += 'A'
+      output += 'A';
     }
 
     /**
@@ -110,7 +110,7 @@ var indik2abc = function (input) {
       ( index - 1 < 0 || input[index - 1] === ' ' ) &&
       currentCharacter !== 'अ' && currentCharacter !== 'आ'
     ) {
-      output += 'A'
+      output += 'A';
     }
 
     // Handle am sign
@@ -119,13 +119,13 @@ var indik2abc = function (input) {
       nextCharacter === anuswara &&
       !isInIt(vowelSigns, currentCharacter)
     ) {
-      output += 'A'
+      output += 'A';
     }
 
-    index++
+    index++;
   }
 
-  return output
+  return output;
 }
 
 module.exports = indik2abc
