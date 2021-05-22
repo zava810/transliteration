@@ -5,9 +5,7 @@ const indik2abc = require('./indik2abc')
 
 class transliterator {
   // From indik to abc
-  transliterate_indik_abc (input) {
-    return indik2abc(input)
-  }
+  transliterate_indik_abc (input) { return indik2abc(input) }
 }
 
 module.exports = transliterator
