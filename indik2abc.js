@@ -27,9 +27,9 @@ var indik2abc = function (input) {
    * @return bool
    */
   function isInIt (list, val) {
-    if (!Array.isArray(list)) { list = Object.keys(list) }
+    if (!Array.isArray(list)) { list = Object.keys(list); }
 
-    return list.indexOf(val) !== -1
+    return list.indexOf(val) !== -1;
   }
 
   /* eslint-disable object-property-newline */
@@ -66,16 +66,16 @@ var indik2abc = function (input) {
     'ै', 'ो', 'ॊ', 'ौ', 'ं', 'ಃ'
   ]
 
-  var virama = '्'
-  var anuswara = 'ं'
+  var virama = '्';
+  var anuswara = 'ं';
 
-  const inputLength = input.length
-  let index = 0
-  let output = ''
+  const inputLength = input.length;
+  let index = 0;
+  let output = '';
 
   while (index < inputLength) {
-    const currentCharacter = input[index]
-    const nextCharacter = input[index + 1]
+    const currentCharacter = input[index];
+    const nextCharacter = input[index + 1];
 
     /**
      * If current charachter is a punctuation symbol skip it.
@@ -93,7 +93,8 @@ var indik2abc = function (input) {
     if (
       index + 1 < inputLength &&
       isInIt(dictionary, currentCharacter) && isInIt(dictionary, nextCharacter) &&
-      !isInIt(vowelSigns, nextCharacter) && !isInIt(vowels, currentCharacter) && !isInIt(vowelSigns, currentCharacter)
+      !isInIt(vowelSigns, nextCharacter) && !isInIt(vowels, currentCharacter) &&
+      !isInIt(vowelSigns, currentCharacter)
     ) {
       output += 'A';
     }
