@@ -56,6 +56,12 @@ for (var i=0; i < input_list.length; i++) {
         else {
           output += zabc_list[curr_char_modulo];
         }
+        // if((0x2 === curr_char_modulo) && (0x47 === prev_char_modulo)) {
+        //   output += 'in';
+        // }
+        // else {
+        //   output += zabc_list[curr_char_modulo];
+        // }
         indeks++ ; // continue ;
       }
       else if (curr_lang_code === 0) {

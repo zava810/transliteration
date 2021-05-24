@@ -2,15 +2,15 @@ export function get_zabc_list() {
     const zabc_list = [
         'N', // 	ऀ	900	2304		inverted candrabindu
         'N', // 	ँ	901	2305		anunasika(candrabindu)
-        '', // 	ं	902	2306	anuswara	anusvara bindu
+        'N', // 	ं	902	2306	anuswara	anusvara bindu
         'A', // 	ः	903	2307		visarga
         'Ae', // 	ऄ	904	2308		short a ,  e in awadh
         'A', // 	अ	905	2309	vovls
         'a', // 	आ	906	2310	vovls
         'i', // 	इ	907	2311	vovls
-        'ii', // 	ई	908	2312	vovls
+        'i', // 	ई	908	2312	vovls
         'u', // 	उ	909	2313	vovls
-        'uu', // 	ऊ	90A	2314	vovls
+        'u', // 	ऊ	90A	2314	vovls
         'ri', // 	ऋ	90B	2315	vovls
         'li', // 	ऌ	90C	2316	vovls
         'A', // 	ऍ	90D	2317	no	candra e
@@ -20,7 +20,7 @@ export function get_zabc_list() {
         'ao', // 	ऑ	911	2321		candra o
         'o', // 	ऒ	912	2322		short o
         'o', // 	ओ	913	2323
-        'ou', // 	औ	914	2324
+        'Au', // 	औ	914	2324
         'k', // 	क	915	2325
         'kh', // 	ख	916	2326
         'g', // 	ग	917	2327
@@ -33,7 +33,7 @@ export function get_zabc_list() {
         'ny', // 	ञ	91E	2334		nya
         't', // 	ट	91F	2335
         'th', // 	ठ	920	2336
-        'd', // 	ड	921	2337
+        'rr', // 	ड	921	2337
         'dh', // 	ढ	922	2338
         'n', // 	ण	923	2339		nna
         'T', // 	त	924	2340
@@ -64,15 +64,15 @@ export function get_zabc_list() {
         '!', // 	ऽ	93D	2365		Avagraha
         'a', // 	ा	93E	2366	vvs
         'i', // 	ि	93F	2367	vvs
-        'ii', // 	ी	940	2368	vvs
+        'i', // 	ी	940	2368	vvs
         'u', // 	ु	941	2369	vvs
-        'uu', // 	ू	942	2370	vvs
+        'u', // 	ू	942	2370	vvs
         'ri', // 	ृ	943	2371	vvs
         'rri', // 	ॄ	944	2372
         'e', // 	ॅ	945	2373		candra e
         'ei', // 	ॆ	946	2374		short e
         'e', // 	े	947	2375
-        'A', // 	ै	948	2376
+        'ei', // 	ै	948	2376
         'o', // 	ॉ	949	2377		candra o
         'oe', // 	ॊ	94A	2378		short o
         'o', // 	ो	94B	2379	vvs
