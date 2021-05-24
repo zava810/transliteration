@@ -137,8 +137,8 @@ var indik2abc = function (input) {
   ],
   hard_consonants_modulo_list : [
     0x15, 0x17, 0x1A, 0x1C, 0x1F, 0x21, 0x24, 0x26, 0x2A, 0x2C, 0x37, 0x58, 0x5A, 0x5B, 0x79, 0x7C, 0x7E, 0x7F,
-  ].
-  };
+  ],
+};
  // const zabc_list_dict.zabc_list = get_zabc_list();
  // const zabc_list_dict.hard_consonants_modulo_list = get_hard_consonants();
   function is_in_it (list, val) {
