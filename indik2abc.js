@@ -1,7 +1,11 @@
+const zabc = require('./zbc')
 var indik2abc = function (input) {
-  import { get_zabc_list , get_hard_consonants } from './zabc_list.js';
-  const zabc_list = get_zabc_list();
-  const hard_consonants_modulo_list = get_hard_consonants();  
+//  import { get_zabc_list , get_hard_consonants } from './zabc_list_dict.zabc_list.js';
+//  const zabc_list_dict.zabc_list = get_zabc_list();
+//  const zabc_list_dict.hard_consonants_modulo_list = get_hard_consonants();
+const zabc_list_dict = zabc();
+ // const zabc_list_dict.zabc_list = get_zabc_list();
+ // const zabc_list_dict.hard_consonants_modulo_list = get_hard_consonants();
   function is_in_it (list, val) {
     if (!Array.isArray(list)) { list = Object.keys(list); }
     return list.indexOf(val) !== -1;
@@ -37,17 +41,17 @@ var indik2abc = function (input) {
       //   '. nekst_char is : ' + nekst_char +
       //   '. curr_char_modulo is : ' + curr_char_modulo.toString(0x10)
       // );
-      if(0x39 === curr_char_modulo && !is_in_it(hard_consonants_modulo_list,prev_char_modulo) ){
+      if(0x39 === curr_char_modulo && !is_in_it(zabc_list_dict.hard_consonants_modulo_list,prev_char_modulo) ){
         output += 'h';
       }
       else {
-        output += zabc_list[curr_char_modulo];
+        output += zabc_list_dict.zabc_list[curr_char_modulo];
       }
       // if((0x2 === curr_char_modulo) && (0x47 === prev_char_modulo)) {
       //   output += 'in';
       // }
       // else {
-      //   output += zabc_list[curr_char_modulo];
+      //   output += zabc_list_dict.zabc_list[curr_char_modulo];
       // }
       indeks++ ; // continue ;
     }

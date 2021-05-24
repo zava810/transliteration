@@ -1,6 +1,7 @@
 const transliterator = require('../transliterator.js')
 const assert = require('assert')
-
+// var t = new transliterator()
+// t.transliterate_indik_abc('हिन्दी विकिपीडिया')
 describe('hindi', function () {
   var t = new transliterator()
   it('letters', function () {
