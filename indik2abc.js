@@ -1,8 +1,7 @@
-import { get_zabc_list , get_hard_consonants } from './zabc_list.js';
-const zabc_list = get_zabc_list();
-const hard_consonants_modulo_list = get_hard_consonants();
-
 var indik2abc = function (input) {
+  import { get_zabc_list , get_hard_consonants } from './zabc_list.js';
+  const zabc_list = get_zabc_list();
+  const hard_consonants_modulo_list = get_hard_consonants();  
   function is_in_it (list, val) {
     if (!Array.isArray(list)) { list = Object.keys(list); }
     return list.indexOf(val) !== -1;
