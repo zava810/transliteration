@@ -1,8 +1,6 @@
 import { get_zabc_list , get_hard_consonants } from './zabc_list.js';
-import { get_input_list } from './input_list.js';
 const zabc_list = get_zabc_list();
 const hard_consonants_modulo_list = get_hard_consonants();
-const input_list = get_input_list();
 
 var indik2abc = function (input) {
   function is_in_it (list, val) {
