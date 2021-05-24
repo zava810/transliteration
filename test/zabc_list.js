@@ -2,7 +2,7 @@ export function get_zabc_list() {
     const zabc_list = [
         'N', // 	ऀ	900	2304		inverted candrabindu
         'N', // 	ँ	901	2305		anunasika(candrabindu)
-        'N', // 	ं	902	2306	anuswara	anusvara bindu
+        '', // 	ं	902	2306	anuswara	anusvara bindu
         'A', // 	ः	903	2307		visarga
         'Ae', // 	ऄ	904	2308		short a ,  e in awadh
         'A', // 	अ	905	2309	vovls
@@ -35,7 +35,7 @@ export function get_zabc_list() {
         'th', // 	ठ	920	2336
         'd', // 	ड	921	2337
         'dh', // 	ढ	922	2338
-        'AnA', // 	ण	923	2339		nna
+        'n', // 	ण	923	2339		nna
         'T', // 	त	924	2340
         'Th', // 	थ	925	2341
         'D', // 	द	926	2342
@@ -55,7 +55,7 @@ export function get_zabc_list() {
         'lll', // 	ऴ	934	2356		llla
         'v', // 	व	935	2357
         'sh', // 	श	936	2358
-        'sA', // 	ष	937	2359
+        'ss', // 	ष	937	2359
         's', // 	स	938	2360
         'H', // 	ह	939	2361
         'oe', // 	ऺ	93A	2362		oe
@@ -71,13 +71,13 @@ export function get_zabc_list() {
         'rri', // 	ॄ	944	2372
         'e', // 	ॅ	945	2373		candra e
         'ei', // 	ॆ	946	2374		short e
-        'i', // 	े	947	2375
-        'ei', // 	ै	948	2376
+        'e', // 	े	947	2375
+        'A', // 	ै	948	2376
         'o', // 	ॉ	949	2377		candra o
         'oe', // 	ॊ	94A	2378		short o
         'o', // 	ो	94B	2379	vvs
         'ou', // 	ौ	94C	2380	vvs
-        'A', // 	्	94D	2381	virama	VIRAMA halant suppresses inherent vowel
+        '', // 	्	94D	2381	virama	VIRAMA halant suppresses inherent vowel
         '', // 	ॎ	94E	2382		prishthamatra e , combines with e to form ai, with aa to form o,and with o to form au
         'Ao', // 	ॏ	94F	2383		aw
         'om', // 	ॐ	950	2384
@@ -132,24 +132,10 @@ export function get_zabc_list() {
     return zabc_list;
 }
 ///////////////
-// const hard_cons_modulo_list = [
-// 0x15
-// 0x17
-// 0x1A
-// 0x1C
-// 0x1F
-// 0x21
-// 0x24
-// 0x26
-// 0x2A
-// 0x2C
-// 0x37
-// 0x58
-// 0x5A
-// 0x5B
-// 0x79
-// 0x7C
-// 0x7E
-// 0x7F
-// ];
+export function get_hard_consonants() {
+  const hard_consonants_modulo_list = [
+    0x15, 0x17, 0x1A, 0x1C, 0x1F, 0x21, 0x24, 0x26, 0x2A, 0x2C, 0x37, 0x58, 0x5A, 0x5B, 0x79, 0x7C, 0x7E, 0x7F,
+  ];
+  return hard_consonants_modulo_list;
+}
 ///////////////
