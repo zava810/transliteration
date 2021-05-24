@@ -1,9 +1,10 @@
-const transliterator = require('../transliterator.js')
+// const transliterator = require('../transliterator.js')
+var libindikTransliteration = require("libindik-transliteration")
 const assert = require('assert')
 // var t = new transliterator()
 // t.transliterate_indik_abc('हिन्दी विकिपीडिया')
 describe('hindi', function () {
-  var t = new transliterator()
+  var t = new libindikTransliteration()
   it('letters', function () {
     var cases = { अ: 'A', आ: 'a', क: 'k', प: 'p', म: 'm' }
     for (const k in cases) { assert.equal(t.transliterate_indik_abc(k), cases[k]) }

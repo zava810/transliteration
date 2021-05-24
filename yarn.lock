@@ -929,7 +929,7 @@
   dependencies:
     "minimist" "^1.2.5"
 
-"mocha@^7.1.0":
+"mocha@^7.2.0":
   "integrity" "sha512-O9CIypScywTVpNaRrCAgoUnJgozpIofjKUYmJhiCIJMiuYnLI6otcb1/kpW9/n/tJODHGZ7i8aLQoDVsMtOKQQ=="
   "resolved" "https://registry.npmjs.org/mocha/-/mocha-7.2.0.tgz"
   "version" "7.2.0"
