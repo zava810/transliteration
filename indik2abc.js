@@ -1,9 +1,4 @@
-// const zabc = require('./zbc')
 var indik2abc = function (input) {
-//  import { get_zabc_list , get_hard_consonants } from './zabc_list_dict.zabc_list.js';
-//  const zabc_list_dict.zabc_list = get_zabc_list();
-//  const zabc_list_dict.hard_consonants_modulo_list = get_hard_consonants();
-// const zabc_list_dict = zabc();
   const zabc_list_dict = {
     zabc_list: [
       'N', // 	ऀ	900	2304		inverted candrabindu
@@ -39,7 +34,7 @@ var indik2abc = function (input) {
       'ny', // 	ञ	91E	2334		nya
       't', // 	ट	91F	2335
       'th', // 	ठ	920	2336
-      'rr', // 	ड	921	2337
+      'd', // 	ड	921	2337
       'dh', // 	ढ	922	2338
       'n', // 	ण	923	2339		nna
       'T', // 	त	924	2340
@@ -139,8 +134,6 @@ var indik2abc = function (input) {
     0x15, 0x17, 0x1A, 0x1C, 0x1F, 0x21, 0x24, 0x26, 0x2A, 0x2C, 0x37, 0x58, 0x5A, 0x5B, 0x79, 0x7C, 0x7E, 0x7F,
   ],
 };
- // const zabc_list_dict.zabc_list = get_zabc_list();
- // const zabc_list_dict.hard_consonants_modulo_list = get_hard_consonants();
   function is_in_it (list, val) {
     if (!Array.isArray(list)) { list = Object.keys(list); }
     return list.indexOf(val) !== -1;

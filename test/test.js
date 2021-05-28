@@ -12,12 +12,12 @@ describe('hindi', function () {
 
   it('vords', function () {
     var cases = {
-      मां: 'ma',
+      मां: 'maN',
       पिता: 'piTa',
-      कौआ: 'kAua',
+      कौआ: 'koua',
       बल्ला: 'blla',
       जंगल: 'zNgl',
-      मुखपृष्ठ: 'mukhprishth',
+      मुखपृष्ठ: 'mukhpristh',
       'हिन्दी विकिपीडिया': 'hinDi vikipidiya'
     }
 
