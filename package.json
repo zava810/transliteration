@@ -1,6 +1,6 @@
 {
   "name": "libindik-transliteration",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "description": "transliteration module for indian languages",
   "main": "transliterator.js",
   "directories": {
