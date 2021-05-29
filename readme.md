@@ -46,7 +46,7 @@ import zabc from './zabc.js';
 const input = 'हिन्दी विकिपीडिया' ;
 var t = new transliterator()
 const zabc_dikt = zabc()
-var transliterated_output = t.transliterate_indik_abc(k,zabc_dikt)
+var transliterated_output = t.transliterate_indik_abc(input,zabc_dikt)
 ```
 
 [code_map_sheet]: https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY_On0oQlYqCH8KrAuNy9nxnUKRx9dG6UvjoZjbP1ZVeXX6VcHl-sU2yg9jbAFszCcNZ5STK47_rz/pubhtml
