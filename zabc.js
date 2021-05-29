@@ -1,5 +1,5 @@
 // export function get_zabc_list() {
-var zabc = function (input) {
+var zabc = function () {
     const zabc_list_dict = {
       zabc_list: [
         'N', // 	ऀ	900	2304		inverted candrabindu
@@ -131,10 +131,10 @@ var zabc = function (input) {
         'd', // 	ॾ	97E	2430		d
         'b', // 	ॿ	97F	2431		b
     ],
-    hard_consonants_modulo_list : [
-      0x15, 0x17, 0x1A, 0x1C, 0x1F, 0x21, 0x24, 0x26, 0x2A, 0x2C, 0x37, 0x58, 0x5A, 0x5B, 0x79, 0x7C, 0x7E, 0x7F,
-    ].
-  }
+      hard_consonants_modulo_list : [
+        0x15, 0x17, 0x1A, 0x1C, 0x1F, 0x21, 0x24, 0x26, 0x2A, 0x2C, 0x37, 0x58, 0x5A, 0x5B, 0x79, 0x7C, 0x7E, 0x7F,
+      ],
+    };
     return zabc_list_dict;
 }
 ///////////////
