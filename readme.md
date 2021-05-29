@@ -22,10 +22,10 @@ this module is used in the webextension [indic-en](//subinsb.com/indicen/).
 5. npm publish
 
 ### steps to use library
-1. define [ascii or hscii or code mapping][code_map_sheet] as in ekzample zabc.js in this repository.
+1. define **[ascii or hscii or code mapping][code_map_sheet]** as in ekzample zabc.js in this repository.
   1. it is to define a dictionary vith keys as :
 ```js
-const zabc_list_dict = {
+const zabc_dikt = {
   zabc_list: [
     'N', // 	ऀ	900	2304		inverted candrabindu
     'N', // 	ँ	901	2305		anunasika(candrabindu)

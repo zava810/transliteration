@@ -1,12 +1,8 @@
 const transliterator = require('../transliterator.js')
-const zabc = require('../zabc.js')
-//var libindikTransliteration = require("libindik-transliteration")
+const zabc_dikt = require('../zabc.js')
 const assert = require('assert')
-// var t = new transliterator()
-// t.transliterate_indik_abc('हिन्दी विकिपीडिया')
 describe('hindi', function () {
-  // var t = new libindikTransliteration()
-  const zabc_dikt = zabc()
+  // const zabc_dikt = zabc()
   var t = new transliterator()
   it('letters', function () { // it_1
     var cases = { अ: 'A', आ: 'a', क: 'k', प: 'p', म: 'm' }
